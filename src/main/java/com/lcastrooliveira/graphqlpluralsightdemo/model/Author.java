@@ -1,9 +1,7 @@
 package com.lcastrooliveira.graphqlpluralsightdemo.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.time.LocalDate;
 import java.util.Objects;
 
 @Entity
@@ -16,6 +14,11 @@ public class Author {
     private String firstName;
 
     private String lastName;
+
+    private LocalDate dateOfBirth;
+
+    @Embedded
+    private Address address;
 
     public Author() {}
 
@@ -52,6 +55,22 @@ public class Author {
         this.lastName = lastName;
     }
 
+    public LocalDate getDateOfBirth() {
+        return dateOfBirth;
+    }
+
+    public void setDateOfBirth(LocalDate dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
+    }
+
+    public Address getAddress() {
+        return address;
+    }
+
+    public void setAddress(Address address) {
+        this.address = address;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -71,6 +90,8 @@ public class Author {
                 "id=" + id +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
+                ", dateOfBirth=" + dateOfBirth +
+                ", address=" + address +
                 '}';
     }
 }

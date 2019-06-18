@@ -1,6 +1,5 @@
 package com.lcastrooliveira.graphqlpluralsightdemo.errors.exceptions;
 
-import graphql.ErrorClassification;
 import graphql.ErrorType;
 import graphql.GraphQLError;
 import graphql.language.SourceLocation;
@@ -24,7 +23,7 @@ public class BookNotFoundException
     }
 
     @Override
-    public ErrorClassification getErrorType() {
+    public ErrorType getErrorType() {
         return ErrorType.DataFetchingException;
     }
 

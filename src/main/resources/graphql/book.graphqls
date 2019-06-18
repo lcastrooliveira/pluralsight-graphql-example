@@ -4,6 +4,10 @@ type Book {
     isbn: String!
     pageCount: Int
     author: Author
+    numberOfReviews: Int
+    stars: Float
+    publisher: String
+    dateOfRelease: Date
 }
 
 extend type Query {

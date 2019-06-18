@@ -1,7 +1,20 @@
+scalar Date
+
 type Author {
     id: ID!
     firstName: String!
     lastName: String!
+    address: Address
+    dateOfBirth: Date
+}
+
+type Address {
+    street: String
+    neighbourhood: String
+    city: String
+    state: String
+    country: String
+    zipCode: String
 }
 
 type Query {
