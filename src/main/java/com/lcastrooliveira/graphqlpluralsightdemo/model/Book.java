@@ -1,6 +1,8 @@
 package com.lcastrooliveira.graphqlpluralsightdemo.model;
 
 import javax.persistence.*;
+import java.time.LocalDate;
+import java.util.Date;
 import java.util.Objects;
 
 @Entity
@@ -15,6 +17,14 @@ public class Book {
     private String isbn;
 
     private int pageCount;
+
+    private LocalDate dateOfRelease;
+
+    private String publisher;
+
+    private double stars;
+
+    private int numberOfReviews;
 
     @ManyToOne
     @JoinColumn(name="author_id", nullable = false, updatable = false)
@@ -67,6 +77,38 @@ public class Book {
 
     public void setAuthor(Author author) {
         this.author = author;
+    }
+
+    public LocalDate getDateOfRelease() {
+        return dateOfRelease;
+    }
+
+    public void setDateOfRelease(LocalDate dateOfRelease) {
+        this.dateOfRelease = dateOfRelease;
+    }
+
+    public String getPublisher() {
+        return publisher;
+    }
+
+    public void setPublisher(String publisher) {
+        this.publisher = publisher;
+    }
+
+    public double getStars() {
+        return stars;
+    }
+
+    public void setStars(double stars) {
+        this.stars = stars;
+    }
+
+    public int getNumberOfReviews() {
+        return numberOfReviews;
+    }
+
+    public void setNumberOfReviews(int numberOfReviews) {
+        this.numberOfReviews = numberOfReviews;
     }
 
     @Override

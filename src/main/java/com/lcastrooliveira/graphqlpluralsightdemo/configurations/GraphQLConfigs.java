@@ -3,6 +3,8 @@ package com.lcastrooliveira.graphqlpluralsightdemo.configurations;
 import com.lcastrooliveira.graphqlpluralsightdemo.errors.adapters.GraphQLErrorAdapter;
 import graphql.ExceptionWhileDataFetching;
 import graphql.GraphQLError;
+import graphql.scalars.ExtendedScalars;
+import graphql.schema.GraphQLScalarType;
 import graphql.servlet.GraphQLErrorHandler;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -13,6 +15,11 @@ import java.util.stream.Collectors;
 
 @Configuration
 public class GraphQLConfigs {
+
+    @Bean
+    public GraphQLScalarType getDate() {
+        return ExtendedScalars.Date;
+    }
 
     @Bean
     public GraphQLErrorHandler errorHandler() {

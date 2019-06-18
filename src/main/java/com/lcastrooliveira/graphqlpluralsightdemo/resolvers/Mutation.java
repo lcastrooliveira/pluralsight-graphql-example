@@ -1,5 +1,6 @@
 package com.lcastrooliveira.graphqlpluralsightdemo.resolvers;
 
+
 import com.coxautodev.graphql.tools.GraphQLMutationResolver;
 import com.lcastrooliveira.graphqlpluralsightdemo.errors.exceptions.BookNotFoundException;
 import com.lcastrooliveira.graphqlpluralsightdemo.model.Author;
